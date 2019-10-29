@@ -5,18 +5,10 @@ body{
   margin: 0;
   background-color: #fff;
 }
-.principal{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  list-style-type: none;
-  text-decoration: none;
-}
-.menu{
-  width: 1380px;
-}
 .expand {
   width: 100%;
+  margin-top: 50px;
+  margin-bottom: 50px;
 }
 .navbar {
   width: 100%;
@@ -49,12 +41,10 @@ body{
 }
 .container {
   display: flex;
-  flex-direction: row;
   flex-wrap: wrap;
-  position: relative;
 }
 .item {
-  max-width: 335px;
+  min-width: 335px;
   flex: 3;
   margin: 5px;
   text-align: center;
@@ -81,7 +71,8 @@ justify-content: flex-end;
 }
 .logo {
   text-align: center;
-  margin: 0px 0px 50px 300px;
+  margin-top: 50px;
+  margin-bottom: 100px;
 }
 .highlights {
   position: relative;
@@ -123,17 +114,13 @@ img {
   vertical-align: middle;
 }
 .slideshow {
-width: 1280px;
-height: 600px;
 background: rgb(0,150,231);
 }
 .slideshow-container {
-  max-width: 1320px;
   position: relative;
   margin: auto;
 }
 .box-text {
-  width: 300px;
   text-align: center;
   background: white;
 }
@@ -145,8 +132,6 @@ background: rgb(0,150,231);
   padding: 8px 12px;
   position: absolute;
   bottom: 8px;
-  width: 1270px;
-  height: 100px;
   text-align: right;
 }
 .categoria {
@@ -155,4 +140,9 @@ background: rgb(0,150,231);
   padding: 8px 12px;
   position: absolute;
   top: 0;
+}
+.rodape{
+  background-color: dimgrey;
+  font-size: 10px;
+  text-align: right;
 }
