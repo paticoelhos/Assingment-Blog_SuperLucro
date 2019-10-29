@@ -7,6 +7,9 @@
 
         <link rel="shortcut icon" href="img\favicon.ico" />
         <link rel="stylesheet" type="text/css" href="css\main.css" />
+
+        <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-analytics.js"></script>
     </head>
     <body>
 
@@ -25,11 +28,8 @@
         <section class="row justify-content-center expand container">
             <div class="col-12 slideshow-container container-fluid">
                 <a href="post\7-Dicas-Simples-Para-Você-Começar-a-Vender-Pelo-instagram.html">
-                    <div class="slideshow">
-                    <div class="categoria">Destaque:</div>
-                        
-                            <img class="img-carousel" alt="Venda de forma simples pelo Instagram" src="img\7-Dicas-Simples-Para-Você-Começar-a-Vender-Pelo-instagram.jpg">
-                        
+                    <div class="slideshow">                        
+                        <img class="img-carousel" alt="Venda de forma simples pelo Instagram" src="img\7-Dicas-Simples-Para-Você-Começar-a-Vender-Pelo-instagram.jpg">
                         <div>
                             <div class="text">
                                 <p class="box-text">7 Dicas Simples Para Você Começar a Vender Pelo instagram</p>
@@ -125,15 +125,29 @@
                     </a>
                 </div>
             </div>
+            <div class="col-4 newsletter-caixa">
+                <form class="col-12 form-inline d-flex">
+                    <div class="col-12 newsletter-titulo">
+                        <label>Receba nossos conteúdos <b>gratuitamente</b>!</label>
+                    </div>
+                    <div class="col-10 newsletter-corpo">
+                        <label>Nome completo:</label><br>
+                        <input type="nome" class="newsletter-input" id="inputNome" placeholder="Nome">
+                        <input type="sobrenome" class="newsletter-input" id="inputSobrenome" placeholder="Sobrenome"><br>            
+                        <br>
+                        <label>E-mail:</label><br>
+                        <input type="email" class="newsletter-input" id="inputEmail" placeholder="E-mail"><br> 
+                        <br>
+                        <button type="submit" class="btn btn-primary mx-auto newsletter-botao">Inscreva-se!</button>
+                    </div>
+                </form>
+            </div>      
        </div>
 
         <footer class="col-xs-12 justify-content-right rodape">
-                <div>
-                    <p>Criado por &copy; Grupo Divertida-mentes</p>
-                </div>   
+            Criado por &copy; Grupo Divertida-mentes  
         </footer>
-        
-        <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase.js"></script>
+
         <script src="js/firebase.js"></script>
     </body>
 </html>
