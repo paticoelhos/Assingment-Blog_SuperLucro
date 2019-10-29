@@ -1,11 +1,3 @@
-'use strict';
-
-const form = document.querySelector('.form-inline');
-
-const inputNome = form.querySelector('#inputNome');
-const inputSobrenome = form.querySelector('#inputSobrenome');
-const inputEmail = form.querySelector('#inputEmail');
-
 var config = {
     apiKey: "AIzaSyDVd0b-JNdYJQ4K4qeSbaXQ3cy16TM4rXU",
     authDomain: "super-lucro.firebaseapp.com",
@@ -15,29 +7,44 @@ var config = {
     messagingSenderId: "514538753685",
     appId: "1:514538753685:web:c1112dd80df3dccc3cd59c",
     measurementId: "G-DXBX8JH18N"
-  };
+};
 
+firebase.initializeApp(config);
+var messagesRef = firebase.database().ref('emails');
 
-    function firebasePush(inputEmail) {
+document.getElementById('newsletterForm').addEventListener('submit', submitForm);
 
+function submitForm(e){
+    e.preventDefault();
 
-        if (!firebase.apps.length) {
-            firebase.initializeApp(config);
-        }
-
-        var mailsRef = firebase.database().ref('emails').push().set(
-            {
-                mail inputEmail.value
-            }
-        );
-
+    var ip;
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.open("GET", 'http://meuip.com/api/meuip.php');
+    xmlhttp.send();
+    xmlhttp.onload = function(e) {
+        ip = xmlhttp.response;
     }
 
-    if (form) {
-        form.addEventListener('submit', function (evt) {
-            evt.preventDefault();
-            firebasePush(inputEmail);
+    var nome = getInput("inputNome");
+    var sobrenome = getInput("inputSobrenome");
+    var email = getInput("inputEmail");
+    var data_hora = today.format('YYYY-MM-DD hh:mm:ss');
+    saveMessage(nome, sobrenome, email, data_hora, ip);
+    
+    console.log("submitForm: "+nome+"-"+sobrenome+"-"+email+"-"+data_hora+"-"+ip);
+}
 
-            return alert('Deu bom!');
-        })
-    }
+function getInput(id){
+    return document.getElementById(id).values;
+}
+
+function saveMessage(nome, sobrenome, email, data_hora, ip){
+    var newMsgRef = messagesRef.push();
+    newMsgRef.set({
+        nome: nome,
+        sobrenome: sobrenome,
+        email: email,
+        data_hora: data_hora,
+        ip: ip
+    });
+}

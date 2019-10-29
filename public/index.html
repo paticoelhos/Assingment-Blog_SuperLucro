@@ -8,8 +8,6 @@
         <link rel="shortcut icon" href="img\favicon.ico" />
         <link rel="stylesheet" type="text/css" href="css\main.css" />
 
-        <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-app.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-analytics.js"></script>
     </head>
     <body>
 
@@ -126,7 +124,7 @@
                 </div>
             </div>
             <div class="col-4 newsletter-caixa">
-                <form class="col-12 form-inline d-flex">
+                <form class="col-12 form-inline d-flex" id="newsletterForm">
                     <div class="col-12 newsletter-titulo">
                         <label>Receba nossos conteúdos <b>gratuitamente</b>!</label>
                     </div>
@@ -147,6 +145,14 @@
         <footer class="col-xs-12 justify-content-right rodape">
             Criado por &copy; Grupo Divertida-mentes  
         </footer>
+
+  <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-app.js"></script>
+
+  <!-- Add Firebase products that you want to use -->
+  <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-firestore.js"></script>
+
 
         <script src="js/firebase.js"></script>
     </body>
