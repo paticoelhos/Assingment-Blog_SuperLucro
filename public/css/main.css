@@ -190,6 +190,10 @@ text-shadow:1px 1px 0 #FFF;
 padding: 5px 15px;
 width: 120px;
 }
+.newsletter-sucesso {
+  display:none;
+  font-size: 14px;
+}
 .rodape {
   background-color: dimgrey;
   font-size: 10px;

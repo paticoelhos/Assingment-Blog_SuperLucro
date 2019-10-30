@@ -9,42 +9,44 @@ var config = {
     measurementId: "G-DXBX8JH18N"
 };
 
-firebase.initializeApp(config);
+if (!firebase.apps.length) {
+    firebase.initializeApp(config);
+}
+//firebase.initializeApp(config);
 var messagesRef = firebase.database().ref('emails');
-
 document.getElementById('newsletterForm').addEventListener('submit', submitForm);
+
 
 function submitForm(e){
     e.preventDefault();
 
-    var ip;
-    var xmlhttp = new XMLHttpRequest();
-    xmlhttp.open("GET", 'http://meuip.com/api/meuip.php');
-    xmlhttp.send();
-    xmlhttp.onload = function(e) {
-        ip = xmlhttp.response;
+    function getInput(id){
+        return document.getElementById(id).value;
     }
 
-    var nome = getInput("inputNome");
-    var sobrenome = getInput("inputSobrenome");
-    var email = getInput("inputEmail");
-    var data_hora = today.format('YYYY-MM-DD hh:mm:ss');
-    saveMessage(nome, sobrenome, email, data_hora, ip);
-    
-    console.log("submitForm: "+nome+"-"+sobrenome+"-"+email+"-"+data_hora+"-"+ip);
-}
+    function saveMessage(nome, sobrenome, email, tipo, data_hora, ip){
+        var newMsgRef = messagesRef.push();
+        newMsgRef.set({
+            nome: nome,
+            sobrenome: sobrenome,
+            email: email,
+            tipo: tipo,
+            data_hora: data_hora,
+            ip: ip
+        });
+    }
 
-function getInput(id){
-    return document.getElementById(id).values;
-}
+    var nome = getInput("nome");
+    var sobrenome = getInput("sobrenome");
+    var email = getInput("email");
+    var email = getInput("tipo");
+    var ip = 0;
+    var data_hora = new Date;
+    saveMessage(nome, sobrenome, email, tipo, data_hora, ip);
 
-function saveMessage(nome, sobrenome, email, data_hora, ip){
-    var newMsgRef = messagesRef.push();
-    newMsgRef.set({
-        nome: nome,
-        sobrenome: sobrenome,
-        email: email,
-        data_hora: data_hora,
-        ip: ip
-    });
+    document.getElementById("mensagem-sucesso").style.display = "block";
+    document.getElementById("nome").value = "";
+    document.getElementById("sobrenome").value = "";
+    document.getElementById("email").value = "";
+    document.getElementById("tipo").value = "";
 }
