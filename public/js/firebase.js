@@ -19,11 +19,8 @@ document.getElementById('newsletterForm').addEventListener('submit', submitForm)
 function submitForm(e){
     e.preventDefault();
 
-    console.log("entrou no submitForm");
-
     function getIp(callback)
     {
-        console.log("entrou na função getIP");
         function response(s) {
             callback(window.userip);
 
@@ -65,18 +62,12 @@ function submitForm(e){
     var formEmail = getInput("email");
     var formTipo = getInput("tipo");
     var dataHora = getDate();
-    console.log("Pegou dados?"+formNome+dataHora);
-    console.log("Chegou no getUserIP");
+
     var getUserIP;
     getIp(function (ip) {
         getUserIP = ip;
-        console.log("IP:"+getUserIP);
-
-        saveMessage(formNome, formSobrenome, formEmail, formTipo, dataHora, getUserIP);
-        console.log(saveMessage);
-        
+        saveMessage(formNome, formSobrenome, formEmail, formTipo, dataHora, getUserIP);  
     });
-    console.log(getUserIP);
 
     function getInput(id){
         return document.getElementById(id).value;
