@@ -160,7 +160,7 @@ background: rgb(0,150,231);
   margin: 16px 10% 0 10%;
   max-height: 500px !important;
   max-width: 350px !important;
-  background: #0096E7!important;
+  background:linear-gradient(rgb(21, 89, 167), #19779D) !important;
   color: #0096E7 !important;
 }
 .newsletter-titulo {
