@@ -57,46 +57,40 @@ function submitForm(e){
         return dataFormat;
      }
 
-    var formNome = getInput("nome");
-    var formSobrenome = getInput("sobrenome");
-    var formEmail = getInput("email");
-    var formTipo = getInput("tipo");
-    var dataHora = getDate();
-
-    var getUserIP;
-    getIp(function (ip) {
-        getUserIP = ip;
-        saveMessage(formNome, formSobrenome, formEmail, formTipo, dataHora, getUserIP);  
-    });
-
-    function getInput(id){
-        return document.getElementById(id).value;
-    }
-
-    function saveMessage(nome, sobrenome, email, tipo, data_hora, ip){
-        var newMsgRef = messagesRef.push();
-        newMsgRef.set({
-            nome: nome,
-            sobrenome: sobrenome,
-            email: email,
-            tipo: tipo,
-            data_hora: data_hora,
-            ip: ip,
-        });
-    }
-
-    document.getElementById("mensagem-sucesso").style.display = "block";
-    document.getElementById("nome").value = "";
-    document.getElementById("sobrenome").value = "";
-    document.getElementById("email").value = "";
-    document.getElementById("tipo").value = "";
-}
-
-      function newDoc() {
-    window.location = "\e-book-empreenda-pelo-instagram.pdf"
-       }
+     var formNome = getInput("nome");
+     var formSobrenome = getInput("sobrenome");
+     var formEmail = getInput("email");
+     var formTipo = getInput("tipo");
+     var dataHora = getDate();
+     var nomecompleto = `${formNome} ${formSobrenome}`;
  
-    function infografico() {
-    window.location = "\Infografico-guia-ilustrado-para-bombar-de-vendas-no-instagram.pdf"
-       }
-
+     var getUserIP;
+     getIp(function (ip) {
+         getUserIP = ip;
+         saveMessage(nomecompleto, formEmail, formTipo, dataHora, getUserIP);  
+     });
+ 
+     function getInput(id){
+         return document.getElementById(id).value;
+     }
+ 
+     function saveMessage(nome, email, tipo, data_hora, ip){
+         var newMsgRef = messagesRef.push();
+         newMsgRef.set({
+             nome: nome,
+             email: email,
+             tipo: tipo,
+             data_hora: data_hora,
+             ip: ip,
+         });
+     }
+ 
+     document.getElementById("mensagem-sucesso").style.display = "block";
+     document.getElementById("nome").value = "";
+     document.getElementById("sobrenome").value = "";
+     document.getElementById("email").value = "";
+     document.getElementById("tipo").value = "";
+ }
+function newDoc() {
+    window.location = "\e-book-empreenda-pelo-instagram.pdf"
+       }
