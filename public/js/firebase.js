@@ -91,3 +91,12 @@ function submitForm(e){
     document.getElementById("email").value = "";
     document.getElementById("tipo").value = "";
 }
+
+      function newDoc() {
+    window.location = "\e-book-empreenda-pelo-instagram.pdf"
+       }
+ 
+    function infografico() {
+    window.location = "\Infografico-guia-ilustrado-para-bombar-de-vendas-no-instagram.pdf"
+       }
+
