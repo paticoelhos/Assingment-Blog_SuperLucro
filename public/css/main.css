@@ -63,6 +63,8 @@ body {
   text-align: center;
   margin-top: 50px;
   margin-bottom: 100px;
+  display: flex
+  align-items:center;
 }
 .highlights {
   position: relative;
@@ -148,11 +150,32 @@ background: rgb(0,150,231);
   background: #fff !important;
   color: #0096E7 !important;
 }
+
+.newsletter-caixa-posts {
+  border-style: solid !important;
+  border-width: 3px !important;
+  border-color: #0096E7 !important;
+  border-radius: 10px !important;
+  padding: 10px 10px 10px 10px !important;
+  margin: 16px 10% 0 10%;
+  max-height: 400px !important;
+  max-width: 350px !important;
+  background: #0096E7!important;
+  color: #0096E7 !important;
+}
 .newsletter-titulo {
   margin-top: 50px;
   margin-bottom: 25px;
   text-align: center;
   font-size: 18px;
+}
+
+.newsletter-titulo-posts {
+  margin-top: 50px;
+  margin-bottom: 25px;
+  text-align: center;
+  font-size: 24px;
+  color: #FFF;
 }
 .newsletter-corpo {
   font-size: 10px;
@@ -163,6 +186,24 @@ background: rgb(0,150,231);
   padding: 8px;
   display: block;
   width: 100%;
+  overflow: visible;
+  margin: 0;
+}
+
+.newsletter-input-posts {
+  border: 1px solid #ccc!important;
+  padding: 8px;
+  display: flex;
+  width: 80%;
+  overflow: visible;
+  margin: 0;
+}
+
+.newsletter-input-posts-1 {
+  border: 1px solid #ccc!important;
+  padding: 8px;
+  display: flex;
+  width: 85.3%;
   overflow: visible;
   margin: 0;
 }
@@ -187,6 +228,7 @@ background: rgb(0,150,231);
   padding: 5px 15px;
   width: 120px;
 }
+
 .newsletter-sucesso {
   display:none;
   font-size: 14px;
