@@ -146,9 +146,10 @@ background: rgb(0,150,231);
   border-color: #0096E7 !important;
   border-radius: 10px !important;
   padding: 10px 10px 10px 10px !important;
-  max-height: 350px !important;
+  max-height: 380px !important;
   background: #fff !important;
   color: #0096E7 !important;
+  margin: 10px 10px 10px 10px;
 }
 
 .newsletter-caixa-posts {
