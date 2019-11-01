@@ -54,8 +54,8 @@ function submitForm(e){
 
     function getDate(){
         var current_datetime = new Date();
-            current_datetime.getMonth() = current_datetime.getMonth()+1;
-        var dataFormat = `${current_datetime.getFullYear()}-${current_datetime.getMonth()}-${current_datetime.getDate()} ${current_datetime.getHours()}:${current_datetime.getMinutes()}:${current_datetime.getSeconds()}`;
+        var mes = current_datetime.getMonth()+1;
+        var dataFormat = `${current_datetime.getFullYear()}-${mes}-${current_datetime.getDate()} ${current_datetime.getHours()}:${current_datetime.getMinutes()}:${current_datetime.getSeconds()}`;
         return dataFormat;
      }
 
