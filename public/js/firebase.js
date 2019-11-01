@@ -16,6 +16,7 @@ if (!firebase.apps.length) {
 var messagesRef = firebase.database().ref('emails');
 document.getElementById('newsletterForm').addEventListener('submit', submitForm);
 
+
 function submitForm(e){
     e.preventDefault();
 
@@ -53,7 +54,8 @@ function submitForm(e){
 
     function getDate(){
         var current_datetime = new Date();
-        var dataFormat = current_datetime.getFullYear() + "-" + (current_datetime.getMonth() + 1) + "-" + current_datetime.getDate() + " " + current_datetime.getHours() + ":" + current_datetime.getMinutes() + ":" + current_datetime.getSeconds();
+            current_datetime.getMonth() = current_datetime.getMonth()+1;
+        var dataFormat = `${current_datetime.getFullYear()}-${current_datetime.getMonth()}-${current_datetime.getDate()} ${current_datetime.getHours()}:${current_datetime.getMinutes()}:${current_datetime.getSeconds()}`;
         return dataFormat;
      }
 
@@ -84,13 +86,16 @@ function submitForm(e){
              ip: ip,
          });
      }
- 
+
      document.getElementById("mensagem-sucesso").style.display = "block";
      document.getElementById("nome").value = "";
      document.getElementById("sobrenome").value = "";
      document.getElementById("email").value = "";
      document.getElementById("tipo").value = "";
+     
+     gtag('submitForm', 'signup_form_complete');
  }
+
 function newDoc() {
-    window.location = "\e-book-empreenda-pelo-instagram.pdf"
+    window.location = "\e-book-empreenda-pelo-instagram.pdf";
        }
